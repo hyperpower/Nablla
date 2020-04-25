@@ -11,7 +11,6 @@ if(MSVC)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif()
 
-add_definitions(-DPROJECT_PATH="${PROJECT_SOURCE_DIR}")
 
 # openmp
 OPTION(ENABLE_OPENMP "Enable openmp" ON) # Enabled by default

@@ -593,14 +593,14 @@ public:
 			const std::string& filename,
 			           double  x         = 800,
 			           double  y         = 600,
-			const std::string& font      = "Helvetica",
+			const std::string& font      = "Fira Code",
 			              int  fontsize  = 12) {
 		this->terminal_std = "pngcairo";
 		std::stringstream sst;
 		sst << "set terminal " << this->terminal_std << " enhanced font '"
 				<< font << "," << fontsize << "'" << "size " << x << ", " << y;
 		cmd(sst.str());
-		cmd("set output '" + filename + "'");
+		cmd("set output '" + filename + ".png'");
 		return *this;
 	}
 

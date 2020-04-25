@@ -12,21 +12,19 @@
 
 namespace carpio{
 
-std::string path = PROJECT_PATH; 
-
 TEST(matrxi_sparse, matrix){
 	typedef MatrixSCO_<double> MatSCO;
 	typedef ArrayListV_<double> Arr;
 	std::cout << "This test show how to read sparse matrix aa" << std::endl;
 	MatSCO mat;
-	mm_read_mtx_sparse(path + "/test/input_files/mm/cavity01.mtx", mat);
+	mm_read_mtx_sparse("./test/input_files/mm/cavity01.mtx", mat);
 
 	std::cout << "matrix size = " << mat.size_i() << " x " << mat.size_j() << std::endl;
 	std::cout << "       size = " << mat.size() << std::endl;
 	std::cout << " non-zeros  = " << mat.non_zeros() << std::endl;
 
 	Arr arr;
-	mm_read_array(path + "/test/input_files/mm/cavity01_rhs1.mtx", arr);
+	mm_read_array("./test/input_files/mm/cavity01_rhs1.mtx", arr);
 	std::cout << "array size  = " << arr.size() << std::endl;
 }
 
@@ -35,21 +33,21 @@ TEST(matrxi_sparse, matrix_write){
 	typedef ArrayListV_<double> Arr;
 	std::cout << "This test show how to read sparse matrix" << std::endl;
 	MatSCO mat;
-	mm_read_mtx_sparse(path + "/test/input_files/mm/cavity01.mtx", mat);
+	mm_read_mtx_sparse("./test/input_files/mm/cavity01.mtx", mat);
 
 	std::cout << "matrix size = " << mat.size_i() << " x " << mat.size_j() << std::endl;
 	std::cout << "       size = " << mat.size() << std::endl;
 	std::cout << " non-zeros  = " << mat.non_zeros() << std::endl;
 
 	Arr arr;
-	mm_read_array(path + "/test/input_files/mm/cavity01_rhs1.mtx", arr);
+	mm_read_array("./test/input_files/mm/cavity01_rhs1.mtx", arr);
 	std::cout << "array size  = " << arr.size() << std::endl;
 
-	mm_write_mtx_sparse("./mat.mtx", mat);
+	mm_write_mtx_sparse("./fig/mat.mtx", mat);
 }
 
 TEST(matrxi_sparse, matrix_jacobi){
-	std::string workdir = path + "/test/input_files/mm/";
+	std::string workdir = "./test/input_files/mm/";
 	MatrixSCO_<Float> mf;
 	std::string fn_matrix = "685_bus";
 	// read matrix ----------------------------------------
@@ -80,11 +78,11 @@ TEST(matrxi_sparse, matrix_jacobi){
 	std::cout << "tol      = " << solver.residual() << std::endl;
 	//gnuplot_show_ylog(lr);
 	// out put --------------------------------------------
-	mm_write_array("x.txt", x);
+	mm_write_array("./fig/x.txt", x);
 	Gnuplot gnu;
 	gnu.set_ylogscale();
 	gnu.add(GnuplotActor::Lines(solver.get_residual_array()));
-	gnu.plot();
+	// gnu.plot();
 }
 
 

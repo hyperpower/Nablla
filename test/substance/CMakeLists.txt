@@ -1,10 +1,9 @@
 cmake_minimum_required(VERSION 2.8)
 
-set(This Utility)
+set(This Substance)
 
 set(Sources
-    test_clock.cpp
-    test_any.cpp
+    test_atmosphere.cpp
 )
 
 add_executable(${This} ${Sources})
@@ -12,8 +11,6 @@ add_executable(${This} ${Sources})
 target_link_libraries(${This} PUBLIC
     gtest_main
 )
-
-# gtest_add_tests(TARGET ${This})
 
 add_test(
     NAME ${This} 

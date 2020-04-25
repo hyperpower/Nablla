@@ -24,4 +24,5 @@ target_link_libraries(${This} PUBLIC
 add_test(
     NAME ${This}
     COMMAND ${This}
+    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 )
