@@ -6,6 +6,25 @@ if (POLICY CMP0048)
 endif (POLICY CMP0048)
 project(${PROJECT_NAME} VERSION 0.1)
 
+# window pre-define
+if(MSVC)
+    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+endif()
+
+add_definitions(-DPROJECT_PATH="${PROJECT_SOURCE_DIR}")
+
+# openmp
+OPTION(ENABLE_OPENMP "Enable openmp" ON) # Enabled by default
+IF(ENABLE_OPENMP)
+	  message(STATUS "======== LOOKING FOR OPENMP ========================")
+    add_definitions(-DOPENMP)
+    find_package(OpenMP)
+	if (OPENMP_FOUND)
+    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+	endif()
+ENDIF(ENABLE_OPENMP)
+
 set(cmake_cxx_standard 11)
 # third-party folder
 ####################
@@ -13,9 +32,8 @@ set(cmake_cxx_standard 11)
 # settings on Windows
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
-add_subdirectory(./third-party/googletest)
-
+add_subdirectory(${PROJECT_SOURCE_DIR}/third-party/googletest)
 enable_testing()
 
 # test folder
-add_subdirectory(./test/)
+add_subdirectory(${PROJECT_SOURCE_DIR}/test/)
