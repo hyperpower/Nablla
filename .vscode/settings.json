@@ -1,4 +1,36 @@
 {
+    "editor.fontSize" : 16,
+    "editor.fontFamily" : "'Fira Code', 'Consolas', 'Courier New', monospace",
+    "editor.fontLigatures": true,
     "cmake.configureOnOpen": true,
-    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools"
+    "cmake.buildDirectory" : "${workspaceFolder}/build",
+    "cmake.ctestArgs": [
+        "-V"
+    ],
+    "files.associations": {
+        "array": "cpp",
+        "deque": "cpp",
+        "exception": "cpp",
+        "forward_list": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "ios": "cpp",
+        "list": "cpp",
+        "memory": "cpp",
+        "random": "cpp",
+        "sstream": "cpp",
+        "streambuf": "cpp",
+        "system_error": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "utility": "cpp",
+        "vector": "cpp",
+        "xhash": "cpp",
+        "xlocale": "cpp",
+        "xlocnum": "cpp",
+        "xmemory": "cpp",
+        "xstring": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp"
+    },
 }

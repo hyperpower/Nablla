@@ -31,5 +31,7 @@
 *.out
 *.app
 
-build/
 third-party/
+build-vscode/
+build/
+fig/

@@ -29,3 +29,8 @@ cmake_minimum_required(VERSION 2.8)
   # This is so you can do 'make test' to see all your tests run, instead of
   # manually running the executable runUnitTests to see those specific tests.
   add_test(NAME TestGTest COMMAND TestGTest)
+
+  add_subdirectory(algebra)
+  add_subdirectory(utility)
+  add_subdirectory(substance)
+  add_subdirectory(geometry)
