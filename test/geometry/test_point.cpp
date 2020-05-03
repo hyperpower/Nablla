@@ -1,10 +1,11 @@
 #include "geometry/geometry.hpp"
 #include "gtest/gtest.h"
 
+namespace test_point {
+
 using namespace carpio;
 
 const St dim = 3;
-
 typedef Point_<double, dim> Point;
 typedef Point_<double, 3> Point3;
 typedef Point_<double, 2> Point2;
@@ -68,4 +69,6 @@ TEST(point, distance_to_line){
 	auto al = GA::Lines(l);
 	gnu.add(al);
 	gnu.plot();
+}
+
 }

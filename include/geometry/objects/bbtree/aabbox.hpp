@@ -7,7 +7,6 @@
 #include <map>
 #include "utility/any.hpp"
 
-
 namespace carpio {
 
 template<typename TYPE, St DIM, class OBJ>
