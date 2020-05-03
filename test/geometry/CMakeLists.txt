@@ -5,6 +5,8 @@ set(This Geometry)
 set(Sources
     test_point.cpp
     test_bezier.cpp
+    test_segment.cpp
+    test_box.cpp
 )
 
 add_executable(${This} ${Sources})

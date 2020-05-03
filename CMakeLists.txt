@@ -24,7 +24,7 @@ IF(ENABLE_OPENMP)
 	endif()
 ENDIF(ENABLE_OPENMP)
 
-set(cmake_cxx_standard 11)
+set(cmake_cxx_standard 17)
 # third-party folder
 ####################
 # Prevent overriding the parent project's compiler/linker

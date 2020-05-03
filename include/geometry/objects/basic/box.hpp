@@ -27,6 +27,7 @@ class Box_ {
 public:
 	static const St Dim = DIM;
 	typedef Point_<TYPE, DIM> Point;
+	typedef const Point& const_ref_Point;
 	typedef Box_<TYPE, DIM> Self;
 	typedef St size_type;
 	typedef TYPE Vt;
@@ -93,13 +94,15 @@ public:
 	Point& min() {
 		return _min;
 	}
-	const Point& min() const {
+	const_ref_Point min() const {
 		return _min;
 	}
+
 	Point& max() {
 		return _max;
 	}
-	const Point& max() const {
+
+	const_ref_Point max() const {
 		return _max;
 	}
 
@@ -267,7 +270,7 @@ inline int _ToInt(const PointToSegmentPosition& ps){
 	return _ARES[int(ps)];
 }
 
-template<class TYPE>
+template<typename TYPE>
 int PointToBoxPositionCode(
 		const TYPE& minx, const TYPE& miny,
 		const TYPE& maxx, const TYPE& maxy,

@@ -1,7 +1,6 @@
 #include "geometry/geometry.hpp"
 #include "gtest/gtest.h"
 
-namespace test_point {
 
 using namespace carpio;
 
@@ -69,6 +68,4 @@ TEST(point, distance_to_line){
 	auto al = GA::Lines(l);
 	gnu.add(al);
 	gnu.plot();
-}
-
 }
