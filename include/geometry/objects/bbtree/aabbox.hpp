@@ -48,8 +48,8 @@ public:
 		return *_pobj;
 	}
 	void free_object(){
-		this->min() = Point(0.0, 0.0, 0.0);
-		this->max() = Point(0.0, 0.0, 0.0);
+		this->min_point() = Point(0.0, 0.0, 0.0);
+		this->max_point() = Point(0.0, 0.0, 0.0);
 		if(_pobj != nullptr){
 			delete _pobj;
 		}
@@ -69,7 +69,7 @@ class AABBoxCompareLess_{
 public:
 	bool operator()(const Box& a, const Box& b){
 		for(St d = 0; d < DIM; d++){
-			if(a.min(d) < b.min(d)){
+			if(a.min_point(d) < b.min_point(d)){
 				return true;
 			}
 		}

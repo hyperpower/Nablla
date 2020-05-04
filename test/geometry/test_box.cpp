@@ -24,13 +24,13 @@ TEST(test_box, point_to_box_position){
 	Box2 b(x, y);
 	std::cout << "The box is " << b.xmin() << std::endl;
 
-	auto code = PointToBoxPositionCod(b.min(), b.max(), p);
+	auto code = PointToBoxPositionCode(b.min_point(), b.max_point(), p);
 	ASSERT_EQ(code, 33);
 	std::cout << "code = " << code << std::endl;
 
-	ASSERT_EQ(PointToBoxPositionCode(b.min(), b.max(), Point2(-0.1,  0.1)), 31);
-	ASSERT_EQ(PointToBoxPositionCode(b.min(), b.max(), Point2(-0.1, -0.1)), 11);
-	ASSERT_EQ(PointToBoxPositionCode(b.min(), b.max(), Point2( 0.0,  0.0)), 22);
+	ASSERT_EQ(PointToBoxPositionCode(b.min_point(), b.max_point(), Point2(-0.1,  0.1)), 31);
+	ASSERT_EQ(PointToBoxPositionCode(b.min_point(), b.max_point(), Point2(-0.1, -0.1)), 11);
+	ASSERT_EQ(PointToBoxPositionCode(b.min_point(), b.max_point(), Point2( 0.0,  0.0)), 22);
 
 	ASSERT_EQ(IsInOn(b, Point2( 0.1, 0.1)), true);
 	ASSERT_EQ(IsInOn(b, Point2(-0.1, 0.1)), false);
@@ -74,7 +74,7 @@ TEST(test_box, box_vs_line){
 	gnu.set_xrange(-0.5, 1.5);
 	gnu.set_yrange(-0.5, 1.5);
 	gnu.set_equal_aspect_ratio();
-	gnu.set_terminal_png("./plot/line_box_normal.png");
+	gnu.set_terminal_png("./fig/line_box_normal.png");
 	auto spbox1 = gam.lines(box1);
 	spbox1->style() = "with lines lw 2 lc 8";
 	gnu.add(spbox1);
@@ -120,7 +120,7 @@ inline void BoxLinePositiveCase(int num_case,
     gnu.set_xrange(-0.5, 1.5);
     gnu.set_yrange(-0.5, 1.5);
     gnu.set_equal_aspect_ratio();
-    gnu.set_terminal_png(tfm::format("./plot/lb_positve_%d.png", num_case));
+    gnu.set_terminal_png(tfm::format("./fig/lb_positve_%d.png", num_case));
     auto spbox1 = gam.lines(box1);
     spbox1->style() = "with lines lw 2 lc 8";
     gnu.add(spbox1);

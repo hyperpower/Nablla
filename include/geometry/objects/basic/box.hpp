@@ -26,11 +26,11 @@ template<typename TYPE, St DIM>
 class Box_ {
 public:
 	static const St Dim = DIM;
-	typedef Point_<TYPE, DIM> Point;
+	typedef Point_<TYPE, DIM>       Point;
 	typedef const Point& const_ref_Point;
-	typedef Box_<TYPE, DIM> Self;
-	typedef St size_type;
-	typedef TYPE Vt;
+	typedef Box_<TYPE, DIM>         Self;
+	typedef St                 size_type;
+	typedef TYPE                      Vt;
 	typedef TagBox Tag;
 	typedef TYPE& reference;
 	typedef TYPE* pointer;
@@ -83,26 +83,26 @@ public:
 		return _min == _max;
 	}
 
-	Vt min(int a) const {
+	Vt min_point(int a) const {
 		ASSERT(a < Dim);
 		return _min[a];
 	}
-	Vt max(int a) const {
+	Vt max_point(int a) const {
 		ASSERT(a < Dim);
 		return _max[a];
 	}
-	Point& min() {
+	Point& min_point() {
 		return _min;
 	}
-	const_ref_Point min() const {
+	const_ref_Point min_point() const {
 		return _min;
 	}
 
-	Point& max() {
+	Point& max_point() {
 		return _max;
 	}
 
-	const_ref_Point max() const {
+	const_ref_Point max_point() const {
 		return _max;
 	}
 
@@ -238,8 +238,8 @@ public:
 
 template<typename TYPE, St DIM>
 std::ostream& operator<<(std::ostream& stream, const Box_<TYPE, DIM>& box) {
-	stream << "max = " << box.max();
-	stream << "  min = " << box.min();
+	stream << "max = " << box.max_point();
+	stream << "  min = " << box.min_point();
 	return stream;
 }
 
@@ -328,17 +328,17 @@ template<typename TYPE, St DIM>
 bool IsInOn(
 		const Box_<TYPE, DIM>& box,
 		const Point_<TYPE, DIM>& p){
-	auto pos =  OnWhichSide5(box.min(_X_), box.max(_X_), p.x());
+	auto pos =  OnWhichSide5(box.min_point(_X_), box.max_point(_X_), p.x());
 	if(pos == _PS_OUT_START_ || pos == _PS_OUT_END_){
 		return false;
 	}
 	if (DIM >= 2) {
-		pos = OnWhichSide5(box.min(_Y_), box.max(_Y_), p.y());
+		pos = OnWhichSide5(box.min_point(_Y_), box.max_point(_Y_), p.y());
 		if (pos == _PS_OUT_START_ || pos == _PS_OUT_END_) {
 			return false;
 		}
 		if (DIM == 3) {
-			pos = OnWhichSide5(box.min(_Z_), box.max(_Z_), p.z());
+			pos = OnWhichSide5(box.min_point(_Z_), box.max_point(_Z_), p.z());
 			if (pos == _PS_OUT_START_ || pos == _PS_OUT_END_) {
 				return false;
 			}
@@ -352,10 +352,10 @@ bool IsInOn(
 		const Box_<TYPE, DIM>& b1,
 		const Box_<TYPE, DIM>& b2){
 	for (St d = 0; d < DIM; ++d) {
-		if (b2.min(d) > b1.max(d)) {
+		if (b2.min_point(d) > b1.max_point(d)) {
 			return false;
 		}
-		if (b2.max(d) < b1.min(d)) {
+		if (b2.max_point(d) < b1.min_point(d)) {
 			return false;
 		}
 	}

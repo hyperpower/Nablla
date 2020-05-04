@@ -44,6 +44,7 @@ int _RemoveSamePoints(std::list<std::shared_ptr<Point_<NUM, 2> > >& listp,
         return IsSame(*sp1, *sp2, s);
     };
     listp.unique(fun);
+    return 0;
 }
 
 // Point min is (0, 0)
@@ -186,21 +187,21 @@ template<class NUM>
 std::list<std::shared_ptr<Point_<NUM, 2> > >
 IntersectLineBox(const Box_<NUM,2>&  box,                    // Box
                  const Line_<NUM>&   line){                  // Line
-    return IntersectLineBox(box.min(), box.max(), line);
+    return IntersectLineBox(box.min_point(), box.max_point(), line);
 }
 
 template<class NUM>
 std::list<std::shared_ptr<Point_<NUM, 2> > >
 IntersectLinePositiveBox(const Box_<NUM,2>&  box,            // Box
                          const Line_<NUM>&   line){         // Line
-    return IntersectLinePositiveBox(box.min(), box.max(), line);
+    return IntersectLinePositiveBox(box.min_point(), box.max_point(), line);
 }
 
 template<class NUM>
 std::list<std::shared_ptr<Point_<NUM, 2> > >
 IntersectLineNegativeBox(const Box_<NUM,2>&  box,           // Box
                          const Line_<NUM>&   line){         // Line
-    return IntersectLineNegativeBox(box.min(), box.max(), line);
+    return IntersectLineNegativeBox(box.min_point(), box.max_point(), line);
 }
 
 
