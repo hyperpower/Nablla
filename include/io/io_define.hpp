@@ -8,11 +8,18 @@
 #ifdef __linux__ 
     //linux code goes here
 	#include <unistd.h>
-#else _WIN32
+#else // _WIN32
     // windows code goes here
 	#include <io.h>
 	#include <process.h>
 	#include <windows.h>
+#endif
+
+#if defined _MSC_VER
+#include <direct.h>
+#elif defined __GNUC__
+#include <sys/types.h>
+#include <sys/stat.h>
 #endif
 
 #include <string>
@@ -143,15 +150,34 @@ inline bool FileAccessCheck( //
 }
 
 
-#ifdef _WIN32
-inline std::string CurrentWorkingDirectory()
-{
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)
+inline std::string CurrentWorkingDirectory(){
     const unsigned long maxDir = 260;
     char currentDir[maxDir];
     GetCurrentDirectoryA(maxDir, currentDir);
     return std::string(currentDir);
 }
+
 #endif
+
+
+
+
+inline bool CreateDir(std::string dir) {
+#if defined _MSC_VER   // windows
+	int rc = _mkdir( dir.data() );
+    if( rc == 0 ){
+		return true;
+	}else if(rc == EEXIST){
+		// file exist
+		return true;
+	}else{
+		return false;
+	}
+#elif defined __GNUC__
+    mkdir(dir.data(), 0777);
+#endif
+}
 
 
 class TextFile {

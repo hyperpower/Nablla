@@ -30,7 +30,8 @@ cmake_minimum_required(VERSION 2.8)
   # manually running the executable runUnitTests to see those specific tests.
   add_test(NAME TestGTest COMMAND TestGTest)
 
-  add_subdirectory(algebra)
-  add_subdirectory(utility)
-  add_subdirectory(substance)
-  add_subdirectory(geometry)
+  # add_subdirectory(algebra)
+  # add_subdirectory(utility)
+  # add_subdirectory(substance)
+  # add_subdirectory(geometry)
+  add_subdirectory(structure)
