@@ -13,7 +13,7 @@ cmake_minimum_required(VERSION 2.8)
   include_directories(${PROJECT_SOURCE_DIR}/include)
 #   include_directories(${PROJECT_SOURCE_DIR}/src)
   ##############
-  # Unit Tests
+  # Unit Tests -- Add test_gtest
   ##############
   set(Source
       test_gtest.cpp
@@ -31,6 +31,7 @@ cmake_minimum_required(VERSION 2.8)
   add_test(NAME TestGTest COMMAND TestGTest)
 
   # add_subdirectory(algebra)
+  # add_subdirectory(io)
   # add_subdirectory(utility)
   # add_subdirectory(substance)
   # add_subdirectory(geometry)
