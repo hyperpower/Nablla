@@ -12,6 +12,7 @@
     //linux code goes here
 #else // _WIN32
     // windows code goes here
+	#pragma warning(default:4716)
 	#define NOMINMAX
 #endif
 

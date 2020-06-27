@@ -18,7 +18,7 @@ public:
 
     typedef std::shared_ptr<SIndex_<DIM> > spIndex;
     typedef std::shared_ptr<SGhost_<DIM> > spGhostBase;
-    typedef std::shared_ptr<SGrid_<DIM>  >  spGridBase;
+    typedef std::shared_ptr<SGrid_<DIM>  > spGridBase;
     typedef std::shared_ptr<SOrder_<DIM> > spOrderBase;
 
     typedef GRID   Grid;

@@ -9,6 +9,12 @@ project(${PROJECT_NAME} VERSION 0.1)
 # window pre-define
 if(MSVC)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+    # Force to always compile with W4
+    if(CMAKE_CXX_FLAGS MATCHES "/W[0-4]")
+        string(REGEX REPLACE "/W[0-4]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    else()
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
+  endif()
 endif()
 
 
