@@ -18,15 +18,15 @@ public:
 
     typedef std::shared_ptr<SIndex_<DIM> > spIndex;
     typedef std::shared_ptr<SGhost_<DIM> > spGhostBase;
-    typedef std::shared_ptr<SGrid_<DIM> >  spGridBase;
+    typedef std::shared_ptr<SGrid_<DIM>  >  spGridBase;
     typedef std::shared_ptr<SOrder_<DIM> > spOrderBase;
 
     typedef GRID   Grid;
     typedef GHOST  Ghost;
     typedef ORDER  Order;
-    typedef std::shared_ptr<SGhost_<DIM> > spGhost;
-    typedef std::shared_ptr<SGrid_<DIM> >  spGrid;
-    typedef std::shared_ptr<SOrder_<DIM> > spOrder;
+    typedef std::shared_ptr<Ghost> spGhost;
+    typedef std::shared_ptr<Grid > spGrid;
+    typedef std::shared_ptr<Order> spOrder;
 
     typedef std::function<Vt(Vt, Vt, Vt, Vt)> FunXYZT_Value;
 
@@ -46,7 +46,7 @@ public:
         _grid(spg), _ghost(spgh),
         _mat(spg->n(_X_), spg->n(_Y_), spg->n(_Z_)){
         // Initall a default order_xyz
-        _order = spOrder(new SOrderXYZ_<DIM>(spg,spgh));
+        _order = spOrder(new Order(spg,spgh));
     }
     SField_(spGrid spg, spGhost spgh, spOrder spor) :
             _grid(spg), _ghost(spgh), _order(spor),
@@ -80,10 +80,10 @@ public:
     	return sum;
     }
 
-    Vt max_value() const {
+    Vt max() const {
         return _mat.max();
     }
-    Vt min_value() const {
+    Vt min() const {
         return _mat.min();
     }
 
@@ -127,19 +127,23 @@ public:
         return *this;
     }
 
-    reference       operator()(St i, St j = 0, St k = 0){
+    reference
+    operator()(St i, St j = 0, St k = 0){
         return _mat.at(i, j, k);
     }
-    const_reference operator()(St i, St j = 0, St k = 0) const{
+    const_reference 
+    operator()(St i, St j = 0, St k = 0) const{
           return _mat.at(i, j, k);
     }
 
-    reference operator()(const Index& index) {
+    reference 
+    operator()(const Index& index) {
         return _mat.at(index.i(),
                        index.j(),
                        index.k());
     }
-    const_reference operator()(const Index& index) const {
+    const_reference 
+    operator()(const Index& index) const {
         return _mat.at(index.i(),
                        index.j(),
                        index.k());

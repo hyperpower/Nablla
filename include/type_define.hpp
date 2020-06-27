@@ -8,6 +8,13 @@
 #include <omp.h>
 #endif
 
+#ifdef __linux__ 
+    //linux code goes here
+#else // _WIN32
+    // windows code goes here
+	#define NOMINMAX
+#endif
+
 #define ASSERT(expr) assert(expr)
 #define ASSERT_MSG(expr, msg) assert((expr)&&(msg))
 

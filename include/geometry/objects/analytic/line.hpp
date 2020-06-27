@@ -10,9 +10,9 @@ namespace carpio {
 
 static const double s = 1e-10;
 
-template<class NUM>
-NUM InterseptX(const NUM& a, const NUM& alpha){
-	if(std::abs(a) < small){
+template<class N>
+N InterseptX(const N& a, const N& alpha) {
+	if(std::abs(a) < SMALL){
 		return  alpha / (SMALL);
 	}else{
 		return alpha / a;
