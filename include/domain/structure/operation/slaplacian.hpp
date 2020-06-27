@@ -21,42 +21,43 @@ template<St DIM, class FIELD, class GRID, class GHOST, class ORDER>
 class SLaplacianFieldOperation_{
     typedef FIELD Field;
     typedef BoundaryIndex BI;
+    typedef SIndex_<DIM> Index;
 public:
     SLaplacianFieldOperation_(){};
 
     ~SLaplacianFieldOperation_(){};
 
-    void operator()(Field& res, const Field& f, const Vt& t, const BI&) const{
+    void operator()(Field& res, const Field& phi, const Vt& t, const BI& bi) const{
         std::cout << "Ghost Regular" << std::endl;
-        const auto& grid = phi.grid();
-        for (auto& idx : phi.order()) {
-            std::array<Vt, DIM> arr;
-            arr.fill(0.0);
+//         const auto& grid = phi.grid();
+//         for (auto& idx : phi.order()) {
+//             std::array<Vt, DIM> arr;
+//             arr.fill(0.0);
 
-            FOR_EACH_DIM
-            {
-                Index idxp = idx.p(d);
-                Index idxm = idx.m(d);
+//             FOR_EACH_DIM
+//             {
+//                 Index idxp = idx.p(d);
+//                 Index idxm = idx.m(d);
 
-                Vt dfdx_p, dfdx_m;
-                Vt phi_m = Value::Get(phi, *(this->_spbi), idx, idxm, d, _M_, t);
-                Vt phi_p = Value::Get(phi, *(this->_spbi), idx, idxp, d, _P_, t);
-                dfdx_m = (phi(idx) - phi_m)
-                        / (grid.c_(d, idx) - grid.c_(d, idxm));
-                dfdx_p = (phi_p - phi(idx))
-                        / (grid.c_(d, idxp) - grid.c_(d, idx));
-                arr[d] = (dfdx_p * grid.fa(d,_P_,idx) - dfdx_m * grid.fa(d, _M_, idx));
-//                std::cout << "arr [d] " << d <<"  = " << << std::endl;
-            }
+//                 Vt dfdx_p, dfdx_m;
+//                 Vt phi_m = Value::Get(phi, bi, idx, idxm, d, _M_, t);
+//                 Vt phi_p = Value::Get(phi, bi, idx, idxp, d, _P_, t);
+//                 dfdx_m = (phi(idx) - phi_m)
+//                         / (grid.c_(d, idx) - grid.c_(d, idxm));
+//                 dfdx_p = (phi_p - phi(idx))
+//                         / (grid.c_(d, idxp) - grid.c_(d, idx));
+//                 arr[d] = (dfdx_p * grid.fa(d,_P_,idx) - dfdx_m * grid.fa(d, _M_, idx));
+// //                std::cout << "arr [d] " << d <<"  = " << << std::endl;
+//             }
 
 
-            Vt sum = 0;
-            FOR_EACH_DIM
-            {
-                sum += arr[d];
-            }
-            res(idx) = sum;
-        }
+//             Vt sum = 0;
+//             FOR_EACH_DIM
+//             {
+//                 sum += arr[d];
+//             }
+//             res(idx) = sum;
+//         }
     };
 };
 

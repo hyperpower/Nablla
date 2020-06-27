@@ -20,7 +20,7 @@ TEST(structure, test_grid) {
     typedef Point_<Vt, 2> Point;
     
     typedef SGridUniform_<2>   Grid;
-    typedef SGhostRegularSubdivision_<2>  Ghost;
+    typedef SGhostRegular_<2>  Ghost;
     typedef SOrderXYZ_<2>      Order;
 
     typedef SField_<2, Grid, Ghost, Order> Field;
