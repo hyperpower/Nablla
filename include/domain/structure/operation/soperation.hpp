@@ -3,6 +3,7 @@
 
 #include "slaplacian.hpp"
 #include "slaplacian_cut.hpp"
+#include "svalue.hpp"
 
 namespace carpio{
 
