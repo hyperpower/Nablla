@@ -375,10 +375,10 @@ ToString(const PointToSegmentPosition& ps){
 	case _PS_IN_       :  return "IN";        break;
 	case _PS_LEFT_     :  return "LEFT";      break;
 	case _PS_RIGHT_    :  return "RIGHT";     break;
-	case _PS_ON_START_ :  return "ON_START";  break;
-	case _PS_ON_END_   :  return "ON_END";    break;
-	case _PS_OUT_START_:  return "OUT_START"; break;
-	case _PS_OUT_END_  :  return "OUT_END";   break;
+	case _PS_ON_START_ :  return "ON START";  break;
+	case _PS_ON_END_   :  return "ON END";    break;
+	case _PS_OUT_START_:  return "OUT START"; break;
+	case _PS_OUT_END_  :  return "OUT END";   break;
 	}
 	SHOULD_NOT_REACH;
 	return "ERROR PointToSegmentPosition";
