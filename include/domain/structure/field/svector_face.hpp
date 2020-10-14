@@ -20,7 +20,7 @@ public:
     typedef SGhost_<DIM> GhostBase;
     typedef SOrder_<DIM> OrderBase;
 
-    typedef typename FIELD        Field;
+    typedef FIELD                 Field;
     typedef typename FIELD::GRID  Grid;
     typedef typename FIELD::GHOST Ghost;
     typedef typename FIELD::ORDER Order;
