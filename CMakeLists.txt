@@ -21,12 +21,12 @@ endif()
 # openmp
 OPTION(ENABLE_OPENMP "Enable openmp" ON) # Enabled by default
 IF(ENABLE_OPENMP)
-	  message(STATUS "======== LOOKING FOR OPENMP ========================")
+    message(STATUS "======== LOOKING FOR OPENMP ========================")
     add_definitions(-DOPENMP)
     find_package(OpenMP)
 	if (OPENMP_FOUND)
-    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+        set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+        set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 	endif()
 ENDIF(ENABLE_OPENMP)
 

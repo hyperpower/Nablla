@@ -115,10 +115,10 @@ TEST(bezier, second){
 }
 
 TEST(bezier, cubic){
-	Point2 s(-0.3,   -0.1);
-    Point2 c1(0.8,    0);
-    Point2 c2(0.5,   1.0);
-	Point2 e(0.5,    0.5);
+	Point2 s (-0.3,  -0.1);
+    Point2 c1( 0.8,   0.0);
+    Point2 c2( 0.5,   1.0);
+	Point2 e ( 0.5,   0.5);
 
 	std::shared_ptr<BC> spc(new BC3(s, c1, c2, e, 50));
 

@@ -17,6 +17,14 @@
 
 namespace carpio{
 
+template <typename FIELD>
+FIELD Laplacian(const StructureTag&  tag,
+                const FIELD&         field, 
+                const BoundaryIndex& bi, 
+                const std::string&   method=""){
+    
+}
+
 template<St DIM, class FIELD, class GRID, class GHOST, class ORDER>
 class SLaplacianFieldOperation_{
     typedef FIELD Field;

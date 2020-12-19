@@ -161,8 +161,6 @@ inline std::string CurrentWorkingDirectory(){
 #endif
 
 
-
-
 inline bool CreateDir(std::string dir) {
 #if defined _MSC_VER   // windows
 	int rc = _mkdir( dir.data() );

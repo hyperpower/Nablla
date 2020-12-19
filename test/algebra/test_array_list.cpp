@@ -16,5 +16,5 @@ TEST(algebra, assgin){
 
 TEST(algebra, t2){
     EXPECT_TRUE(true);
-    EXPECT_EQ(true, true) << "TESt algebra ";
+    EXPECT_EQ(true, true) << "TEST algebra ";
 }
