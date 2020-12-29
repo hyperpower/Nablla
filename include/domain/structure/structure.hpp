@@ -35,8 +35,6 @@
 
 namespace carpio {
 
-class
-
 // template<St DIM>
 // class StructureDomain_{
 // public:

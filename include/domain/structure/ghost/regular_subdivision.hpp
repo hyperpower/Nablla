@@ -60,7 +60,7 @@ public:
                 const Index& indexg,
                 const St& axe,
                 const St& ori) const{
-        int baseid  = Base::boundary_id(indexc, indexg, axe, ori);
+        int baseid  = Base::boundary_id(   indexc, indexg, axe, ori);
         auto bindex = Base::boundary_index(indexc, indexg, axe, ori);
         auto p      = this->_grid->f(axe, ori, bindex);
         auto fun    = _arrfun[baseid];

@@ -6,7 +6,7 @@ def parse_name(name):
     sn = name.split("-")
     # delete underscore in name 
     # Make the first letter upper case
-    sn[3] = sn[3].replace("_", " ");
+    sn[3] = sn[3].replace("_", " ")
     sn[3] = sn[3].title()
     return sn
 
@@ -42,7 +42,7 @@ def clean(path, original_files):
 
 class Path:
     def __init__(self, run_file):
-        self._pfile    = run_file;
+        self._pfile    = run_file
         self._pthis    = os.path.abspath(os.path.join(run_file,   "../"))
         self._pcases   = os.path.abspath(os.path.join(run_file,   "../.."))
         self._pproject = os.path.abspath(os.path.join(self._pcases, "../"))
