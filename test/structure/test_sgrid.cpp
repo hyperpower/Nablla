@@ -25,7 +25,7 @@ TEST(structure, test_grid) {
 
     typedef SField_<2, Grid, Ghost, Order> Field;
 
-    std::shared_ptr<Grid>  spgrid(new  Grid(Point(0,0), 10, 0.1, 2));
+    std::shared_ptr<Grid>  spgrid (new  Grid(Point(0,0), 10, 0.1, 2));
     std::shared_ptr<Ghost> spghost(new Ghost(spgrid));
     std::shared_ptr<Order> sporder(new Order(spgrid, spghost));
 
@@ -34,10 +34,6 @@ TEST(structure, test_grid) {
     std::cout << field << std::endl;
 
     std::shared_ptr<BoundaryIndex> spbi(new BoundaryIndex());
-
-    SLaplacian_<2, Field> lap(spbi);
-    lap(field, 0.0);
-
     
 }
 

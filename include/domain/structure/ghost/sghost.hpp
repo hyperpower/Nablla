@@ -31,10 +31,9 @@ public:
     virtual const Grid& grid() const {
         // return Grid();
     }
-
-    virtual bool is_ghost(const Index& index) const{
+    virtual bool is_ghost(const Index&) const{
         SHOULD_NOT_REACH; return false;};
-    virtual bool is_not_ghost(const Index& index) const{
+    virtual bool is_not_ghost(const Index&) const{
         SHOULD_NOT_REACH; return false;
     };
     virtual bool is_boundary(
