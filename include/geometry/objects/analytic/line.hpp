@@ -21,7 +21,7 @@ N InterseptX(const N& a, const N& alpha) {
 
 template<class NUM>
 NUM InterseptY(const NUM& b, const NUM& alpha){
-	if(std::abs(b) < small){
+	if(std::abs(b) < SMALL){
 		return  alpha / (SMALL);
 	}else{
 		return alpha / b;
