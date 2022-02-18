@@ -1,1 +1,57 @@
-<mxfile host="app.diagrams.net" modified="2022-02-18T10:45:46.592Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="ciHfOoznFoiMMuFsz4w5" version="16.6.1" type="github"><diagram id="Fwt9xINMEdIQ-sMLIJee" name="Page-1">zVbbjpswEP0aHltxzbaPXTbdqjdVinp7qqx4il0BYxkTYL++BhsciyTqalulLxFzPONhzpwZEiR51d9LItgHpFAGcUj7ILkL4vgmzPTvCAwGSKPYAIXk1ECRA3b8ASwYWrTlFBrPUSGWigsf3GNdw155GJESO9/tJ5Z+VkEKWAG7PSnX6FdOFTPoi/jG4W+AF2zOHG1empOKzM62koYRit0RlGyDJJeIyjxVfQ7lyN3Mi4l7feZ0eTEJtfqTgPz28/aHeFvRe9E24l3CHtjHZ4m55UDK1hZctxVIrgnQMAqQRKG0BahhZgWoJsmaKBXDAmtSbh16K7GtKYypQ205n/eIQoORBn+BUoPtOGkVaoipqrSnJueY6Gy9FmqwlXu4UGS8sK1VCliBkoOOk1ASxQ/+/cTqpVj8ltBPyHXmOLTSTmaJzspOQ/8KRWQByka5xuiHo9dw0NSuR7QuXrXulZRkWPXKdWKktWNcwU6QibBOj+wp1g8gFfSXeV/zaQPi1Odl4alz8xPNPuxodjbh+RZ45D2Wqc2KKUoUmZZGJSQ0jWbnCgrXfMrh2xj/PJvN7/a6ybjrPWuw1l+cjNRu1EmpF/yyJ07Qk9qXnhb6l3FF/WdaX3bA1bSenSYrP6/0a3OWZf+OM226D6xZvO5fSrL9DQ==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-02-18T10:53:35.248Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="3fnEBc_kdhFGd74Wd5Vk" version="16.6.1" type="github">
+  <diagram id="Fwt9xINMEdIQ-sMLIJee" name="Page-1">
+    <mxGraphModel dx="705" dy="412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CBUE_pJmdGpuspK3hzhN-3" value="numerical operator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CBUE_pJmdGpuspK3hzhN-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CBUE_pJmdGpuspK3hzhN-2" value="Array" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="310" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CBUE_pJmdGpuspK3hzhN-6" value="data compressed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="CBUE_pJmdGpuspK3hzhN-4" target="CBUE_pJmdGpuspK3hzhN-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rBK04-TI6ftIsLtiBjv8-2" value="data add dim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CBUE_pJmdGpuspK3hzhN-4" target="rBK04-TI6ftIsLtiBjv8-1">
+          <mxGeometry x="0.5556" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="345" y="520" />
+              <mxPoint x="470" y="520" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CBUE_pJmdGpuspK3hzhN-4" value="ArrayVal" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="440" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CBUE_pJmdGpuspK3hzhN-5" value="ArrayCompressed" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="600" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rBK04-TI6ftIsLtiBjv8-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="rBK04-TI6ftIsLtiBjv8-1" target="rBK04-TI6ftIsLtiBjv8-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rBK04-TI6ftIsLtiBjv8-6" value="add&amp;nbsp; compress info" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="rBK04-TI6ftIsLtiBjv8-1" target="rBK04-TI6ftIsLtiBjv8-5">
+          <mxGeometry x="0.7273" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="680" />
+              <mxPoint x="610" y="680" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rBK04-TI6ftIsLtiBjv8-1" value="Matrix" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="600" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rBK04-TI6ftIsLtiBjv8-3" value="DenseMatrix" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="740" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rBK04-TI6ftIsLtiBjv8-5" value="Compressed Matrix" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="740" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
